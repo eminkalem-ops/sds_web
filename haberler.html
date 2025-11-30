@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+
+    <title>Haberler | SDS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!--HEADER-->
+    <header class="main-header">
+        <!--Sol kısım: Hamburger + Logo-->
+        <div class="header-left">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <img src="images/logo.png" alt="SDS Logo" class="logo">
+        </div>
+
+        <!--Orta kısım: Kulüp Adı-->
+        <div class="header-center">
+            SDS - Sustainable Development Society
+        </div>
+
+        <!--Sağ kısım: Dil switch-->
+       <div class="header-right">
+
+    <!-- Üye Ol Butonu -->
+    <a href="https://forms.gle/xVUtAwHRHBxZeBTU9"
+       class="join-btn"
+       target="_blank">Üye Ol</a>
+
+    <a href="#" class="lang-active">TR</a>
+    <a href="#">EN</a>
+</div>
+</header>
+
+<!-- ===================== -->
+<!--       HABERLER        -->
+<!-- ===================== -->
+<section class="home-section">
+    <h2>HABERLER</h2>
+<p class="home-subtitle">Güncel Duyurular, gelişmeler ve sürdürülebilirlik alanındaki önemli gelişmeler.</p>
+    <div class="home-container">
+
+        <!--Haber 1-->
+        <div class="home-card">
+            <img src="images/news/news1.jpg" alt="COP30">
+            <span class="event-date">22 Kasım 2025</span>
+            <h3>Brezilya'da COP30 Zirvesi Başladı</h3>
+            <p>İklim değişikliği müzakerelerinde kritik başlıkların ele alındığı COP30 zirvesi Brezilya'nın Belem kentinde başladı.</p>
+            <a href="haber1.html" class="home-btn">Detaylar</a>
+        </div>
+
+        <!--Haber 2-->
+        <div class="home-card">
+            <img src="images/news/news2.jpg" alt="Yeşil Mutabakat">
+            <span class="event-date">18 Kasım 2025</span>
+            <h3>AB Yeşil Mutabakatında Yeni Gelişmeler</h3>
+            <p>Avrupa Komisyonu, sınırda karbon düzenlemesi için yeni geçiş takvimini paylaştı.</p>
+            <a href="haber2.html" class="home-btn">Detaylar</a>
+        </div>
+
+        <!--Haber 3-->
+        <div class="home-card">
+            <img src="images/news/news3.jpg" alt="Beden–Ruh–Zihin">
+            <span class="event-date">17 Kasım 2025</span>
+            <h3>Sürdürülebilirlik "Beden–Ruh–Zihin" üçgeninde ele alındı</h3>
+            <p>İstanbul Medipol Üniversitesi SURKAM tarafından düzenlenen sempozyumda, sürdürülebilir beslenme; koruyucu hekimlik, çevresel sorumluluk, davranış değişikliği ve bütüncül sağlık perspektifiyle ele alındı.</p>
+            <a href="haber3.html" class="home-btn">Detaylar</a>
+        </div>
+    </div>
+</section>
+<!-- ========================= -->
+<!--          FOOTER           -->
+<!-- ========================= -->
+<a href="#" class="back-to-top">↑</a>
+<footer class="site-footer">
+
+    <div class="footer-top">
+        
+        <!--SOL BLOK-->
+        <div class="footer-column">
+            <img src="images/icons/logo1_transparan.png" alt="SDS Logo" class="footer-logo">
+            <p class="footer-desc">
+                Sustainable Development Society • İstanbul Medipol Üniversitesi
+            </p>
+        </div>
+
+        <!--Orta Blok - Hızlı Linkler-->
+        <div class="footer-column">
+            <h4>Hızlı Erişim</h4>
+            <ul class="footer-links">
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="projeler.html">Projeler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+
+        <!--Sağ Blok - Sosyal Medya -->
+        <div class="footer-column">
+            <h4>Bizi Takip Edin</h4>
+            <div class="footer-social">
+                <a href="#"><img src="images/icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/icons/youtube.png" alt="Youtube"></a>
+                <a href="#"><img src="images/icons/spotify.png" alt="Spotify"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--ALT ÇİZGİ-->
+    <div class="footer-bottom">
+        © 2025 Sustainable Development Society • Tüm Hakları Saklıdır
+    <p class="mini-slogan">Sürdürülübilir Bir Gelecek İçin Gençlik Hareketi</p>
+    </div>
+
+</footer>
+
+<!--SIDEBAR SISTEMI-->
+<div class="sidebar-wrapper">
+
+    <!-- Gizli checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="sidebar-menu">
+
+            <li><a href="index.html">Ana Sayfa</a></li>
+
+            <!--Hakkımızda Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">Hakkımızda</a>
+                <ul class="submenu">
+                    <li><a href="hakkimizda.html">Genel Bilgi</a></li>
+                    <li><a href="ekip.html">Yönetim Kurulu</a></li>
+                </ul>
+            </li>
+
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+
+            <li><a href="projeler.html">Projeler</a></li>
+
+            <!--Haberler Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">Haberler</a>
+                <ul class="submenu">
+                    <li><a href="haberler.html">Haberler</a></li>
+                    <li><a href="analizler.html">Analizler</a></li>
+                </ul>
+            </li>
+
+            <!--İçerikler Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">İçerikler</a>
+                <ul class="submenu">
+                    <li><a href="icerikler.html">Genel Bakış</a></li>
+                    <li><a href="youtube.html">Youtube</a></li>
+                    <li><a href="spotify.html">Podcast / Spotify</a></li>
+                    <li><a href="yazilar.html">Yazılar</a></li>
+                    <li><a href="raporlar.html">Raporlar</a></li>
+                </ul>
+            </li>
+
+            <li><a href="iletisim.html">İletişim</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <label for="menu-toggle" class="overlay"></label>
+
+</div>
+ <script src="script.js"></script>
+
+</body>
+</html>
+    
+    

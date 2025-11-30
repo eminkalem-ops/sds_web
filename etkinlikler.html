@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlikler | SDS</title>
+
+    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ======================================= -->
+<!--                 HEADER                  -->
+<!-- ======================================= -->
+<header class="main-header">
+    <div class="header-left">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <img src="images/logo.png" class="logo" alt="SDS Logo">
+    </div>
+
+    <div class="header-center">
+        SDS - Sustainable Development Society
+    </div>
+
+    <div class="header-right">
+        <a href="https://forms.gle/xVUtAwHRHBxZeBTU9" 
+           target="_blank" 
+           class="join-btn">Üye Ol</a>
+
+        <a href="#" class="lang-active">TR</a>
+        <a href="#">EN</a>
+    </div>
+</header>
+
+
+<!-- ======================================= -->
+<!--            SIDEBAR MENU                 -->
+<!-- ======================================= -->
+<!--SIDEBAR SISTEMI-->
+<div class="sidebar-wrapper">
+
+    <!-- Gizli checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="sidebar-menu">
+
+            <li><a href="index.html">Ana Sayfa</a></li>
+
+            <!--Hakkımızda Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">Hakkımızda</a>
+                <ul class="submenu">
+                    <li><a href="hakkimizda.html">Genel Bilgi</a></li>
+                    <li><a href="ekip.html">Yönetim Kurulu</a></li>
+                </ul>
+            </li>
+
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+
+            <li><a href="projeler.html">Projeler</a></li>
+
+            <!--Haberler Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">Haberler</a>
+                <ul class="submenu">
+                    <li><a href="haberler.html">Haberler</a></li>
+                    <li><a href="analizler.html">Analizler</a></li>
+                </ul>
+            </li>
+
+            <!--İçerikler Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">İçerikler</a>
+                <ul class="submenu">
+                    <li><a href="icerikler.html">Genel Bakış</a></li>
+                    <li><a href="youtube.html">Youtube</a></li>
+                    <li><a href="spotify.html">Podcast / Spotify</a></li>
+                    <li><a href="yazilar.html">Yazılar</a></li>
+                    <li><a href="raporlar.html">Raporlar</a></li>
+                </ul>
+            </li>
+
+            <li><a href="iletisim.html">İletişim</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <label for="menu-toggle" class="overlay"></label>
+
+</div>
+<!-- ======================================= -->
+<!--          SAYFA BAŞLIK ALANI            -->
+<!-- ======================================= -->
+<section class="event-page-header">
+    <h1>Etkinlikler</h1>
+    <p>SDS'in katıldığı konferanslar, eğitimler ve saha etkinlikleri.</p>
+</section>
+
+
+<!-- ======================================= -->
+<!--           ETKİNLİK KARTLARI             -->
+<!-- ======================================= -->
+<section class="event-grid">
+
+    <!-- 1 -->
+    <div class="event-card" 
+         data-images='["images/etkinlik/etkinlik1.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">23 Eylül 2025</span>
+            <h3>GSTM Fakültesi Oryantasyon Sunumu</h3>
+            <p>SDS ve SURKAM tanıtım sunumu gerçekleştirildi.</p>
+        </div>
+    </div>
+
+
+    <!-- 2 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik2.1.jpg","images/etkinlik/etkinlik2.2.jpg","images/etkinlik/etkinlik2.3.jpg","images/etkinlik/etkinlik2.4.jpg","images/etkinlik/etkinlik2.5.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik2.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">24 Eylül 2025</span>
+            <h3>Yeşil İş Platformu – Sürdürülebilirlik Konferansı</h3>
+            <p>Fairmont Quasar’da düzenlenen konferansa SDS ekibi katıldı.</p>
+        </div>
+    </div>
+
+
+    <!-- 3 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik3.1.jpg","images/etkinlik/etkinlik3.2.jpg","images/etkinlik/etkinlik3.3.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik3.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">25 Eylül 2025</span>
+            <h3>Döngüsel Ekonomi Paneli</h3>
+            <p>İSO’da düzenlenen panelde SDS ekibi yer aldı.</p>
+        </div>
+    </div>
+
+
+    <!-- 4 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik4.1.jpg","images/etkinlik/etkinlik4.2.jpg","images/etkinlik/etkinlik4.3.jpg","images/etkinlik/etkinlik4.4.jpg","images/etkinlik/etkinlik4.5.jpg","images/etkinlik/etkinlik4.6.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik4.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">29 Eylül – 2 Ekim 2025</span>
+            <h3>İklim Elçileri Kampı</h3>
+            <p>UNICEF & Bakanlık iş birliğiyle düzenlenen kampa SDS Başkanı katılım sağladı.</p>
+        </div>
+    </div>
+
+
+    <!-- 5 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik5.1.jpg","images/etkinlik/etkinlik5.2.jpg","images/etkinlik/etkinlik5.3.jpg","images/etkinlik/etkinlik5.4.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik5.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">15 Ekim 2025</span>
+            <h3>Kulüp Tanıtım Haftası</h3>
+            <p>SDS standı ile Güney Kampüs’te yer alındı.</p>
+        </div>
+    </div>
+
+
+    <!-- 6 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik6.1.jpg","images/etkinlik/etkinlik6.2.jpg","images/etkinlik/etkinlik6.3.jpg","images/etkinlik/etkinlik6.4.jpg","images/etkinlik/etkinlik6.5.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik6.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">17–19 Ekim 2025</span>
+            <h3>Zero Waste Forum</h3>
+            <p>Dünya genelinden uzmanların katıldığı zirvede SDS ekibi yer aldı.</p>
+        </div>
+    </div>
+
+
+    <!-- 7 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik7.1.jpg","images/etkinlik/etkinlik7.2.jpg","images/etkinlik/etkinlik7.3.jpg","images/etkinlik/etkinlik7.4.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik7.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">22 Ekim 2025</span>
+            <h3>Anıtkabir Ziyareti</h3>
+            <p>SDS ekibi ile Gazi Mustafa Kemal Atatürk anıldı.</p>
+        </div>
+    </div>
+
+
+    <!-- 8 -->
+    <div class="event-card"
+         data-images='["images/etkinlik/etkinlik8.1.jpg","images/etkinlik/etkinlik8.2.jpg","images/etkinlik/etkinlik8.3.jpg","images/etkinlik/etkinlik8.4.jpg","images/etkinlik/etkinlik8.5.jpg","images/etkinlik/etkinlik8.6.jpg","images/etkinlik/etkinlik8.7.jpg","images/etkinlik/etkinlik8.8.jpg","images/etkinlik/etkinlik8.9.jpg","images/etkinlik/etkinlik8.10.jpg"]'>
+
+        <img src="images/etkinlik/etkinlik8.1.jpg" class="event-cover modal-img">
+
+        <div class="event-info">
+            <span class="event-date">24 Ekim 2025</span>
+            <h3>Sürdürülebilirlik Haftası</h3>
+            <p>AİK ile ortak sürdürülebilirlik eğitim haftası programı.</p>
+        </div>
+    </div>
+
+</section>
+
+
+
+<!-- ======================================= -->
+<!--                MODAL                    -->
+<!-- ======================================= -->
+<div id="imgModal" class="modal">
+    <span class="close-modal">&times;</span>
+
+    <span class="modal-prev">&#10094;</span>
+    <img id="modalImage" class="modal-content-img">
+    <span class="modal-next">&#10095;</span>
+</div>
+
+
+
+<!-- ======================================= -->
+<!--                FOOTER                   -->
+<!-- ======================================= -->
+<footer class="site-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-column">
+            <img src="images/icons/logo1_transparan.png" class="footer-logo">
+            <p class="footer-desc">
+                Sustainable Development Society • İstanbul Medipol Üniversitesi
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Hızlı Erişim</h4>
+            <ul class="footer-links">
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="projeler.html">Projeler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Bizi Takip Edin</h4>
+            <div class="footer-social">
+                <a href="#"><img src="images/icons/instagram.png"></a>
+                <a href="#"><img src="images/icons/youtube.png"></a>
+                <a href="#"><img src="images/icons/spotify.png"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Sustainable Development Society • Tüm Hakları Saklıdır
+        <p class="mini-slogan">Sürdürülebilir Bir Gelecek İçin Gençlik Hareketi</p>
+    </div>
+
+</footer>
+
+
+
+<!-- ======================================= -->
+<!--               JAVASCRIPT                -->
+<!-- ======================================= -->
+<script>
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.querySelector(".close-modal");
+
+let images = [];
+let currentIndex = 0;
+
+// Kartlara tıklayınca modal açılır
+document.querySelectorAll(".event-card").forEach(card => {
+    card.addEventListener("click", () => {
+        images = JSON.parse(card.dataset.images);
+        currentIndex = 0;
+        showImage();
+    });
+});
+
+// Resim gösterme fonksiyonu
+function showImage() {
+    modalImg.style.animation = "none";     
+    void modalImg.offsetWidth;             // trick: animasyonu resetler
+    modalImg.style.animation = "fadeIn 0.35s ease";
+
+    modalImg.src = images[currentIndex];
+    modal.classList.remove("closing");
+    modal.style.display = "flex";
+}
+
+// Kapatma fonksiyonu
+function closeModal() {
+    modal.classList.remove("show");
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 250);
+}
+
+closeBtn.addEventListener("click", closeModal);
+
+// Dışarı tıklayınca kapanır
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+});
+
+// SAĞ OK
+document.querySelector(".modal-next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+});
+
+// SOL OK
+document.querySelector(".modal-prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+});
+
+// KLAVYE KONTROLÜ
+document.addEventListener("keydown", (e) => {
+    if (modal.style.display !== "flex") return;
+
+    if (e.key === "ArrowRight") {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+    }
+    if (e.key === "ArrowLeft") {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+    if (e.key === "Escape") closeModal();
+});
+
+
+// MOBİL SWIPE (PARMAKLA KAYDIRMA)
+let touchStartX = 0;
+
+modal.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+modal.addEventListener("touchend", (e) => {
+    let touchEndX = e.changedTouches[0].screenX;
+
+    // SAĞA KAYDIR — ÖNCEKİ FOTO
+    if (touchEndX > touchStartX + 50) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage();
+    }
+    // SOLA KAYDIR — SONRAKİ FOTO
+    else if (touchEndX < touchStartX - 50) {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage();
+    }
+});
+</script>
+
+</body>
+</html>

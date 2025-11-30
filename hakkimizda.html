@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+
+    <title>Hakkımızda - SDS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--HEADER (index ile aynı)-->
+    <header class="main-header">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <img src="images/logo.png" class="logo">
+    <div class="header-center">
+        SDS - Sustainable Development Society
+    </div>
+
+    <div class="header-right">
+        <a href="#" class="join-btn" target="_blank">Üye Ol</a>
+        <a href="#" class="lang-active">TR</a>
+        <a href="about.html">EN</a>
+    </div>
+</header>
+
+ <!--SIDEBAR SISTEMI-->
+<div class="sidebar-wrapper">
+
+    <!-- Gizli checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul class="sidebar-menu">
+
+            <li><a href="index.html">Ana Sayfa</a></li>
+
+            <!--Hakkımızda Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">Hakkımızda</a>
+                <ul class="submenu">
+                    <li><a href="hakkimizda.html">Genel Bilgi</a></li>
+                    <li><a href="ekip.html">Yönetim Kurulu</a></li>
+                </ul>
+            </li>
+
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+
+            <li><a href="projeler.html">Projeler</a></li>
+
+            <!--Haberler Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">Haberler</a>
+                <ul class="submenu">
+                    <li><a href="haberler.html">Haberler</a></li>
+                    <li><a href="analizler.html">Analizler</a></li>
+                </ul>
+            </li>
+
+            <!--İçerikler Alt Menü-->
+            <li class="has-submenu">
+                <a href="#">İçerikler</a>
+                <ul class="submenu">
+                    <li><a href="icerikler.html">Genel Bakış</a></li>
+                    <li><a href="youtube.html">Youtube</a></li>
+                    <li><a href="spotify.html">Podcast / Spotify</a></li>
+                    <li><a href="yazilar.html">Yazılar</a></li>
+                    <li><a href="raporlar.html">Raporlar</a></li>
+                </ul>
+            </li>
+
+            <li><a href="iletisim.html">İletişim</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <label for="menu-toggle" class="overlay"></label>
+
+</div>
+
+<!-- ========================= -->
+<!--     SAYFA ÜST BAŞLIK     -->
+<!-- ========================= -->
+<div class="page-header">
+    <h1>Hakkımızda</h1>
+    <p>SDS'in misyonu vizyonu ve temel değerleri.</p>
+</div>
+
+<!-- ========================= -->
+<!--     ANA İÇERİK BÖLÜMÜ     -->
+<!-- ========================= -->
+<section class="content-section page-content">
+
+    <h2>Misyonumuz</h2>
+    <p>
+        Sustainable Development Society (SDS), İstanbul Medipol Üniversitesi öğrencileri tarafından oluşturulan,
+        sürdürülebilirlik alanında projeler, etkinlikler ve içerikler üreten bir öğrenci topluluğudur.
+        Amacımız; gençlerin küresel sorunlara çözüm üretebileceği bir platform oluşturmaktır.
+    </p>
+
+    <h2>Vizyonumuz</h2>
+    <p>
+        Üniversite gençliğini sürdürülebilir kalkınma hedefleri (SDG) konusunda bilinçlendirmek,
+        yenilikçi projeler üretmek ve sosyal etki yaratan bir topluluk modeli geliştirmek.
+    </p>
+
+    <h2>Değerlerimiz</h2>
+    <ul class="values-list">
+        <li>🌱 Sürdürülebilirlik</li>
+        <li>🤝 Toplumsal Fayda</li>
+        <li>🎓 Eğitim ve Bilinçlenme</li>
+        <li>💡 Yenilikçilik</li>
+        <li>🌍 Küresel Sorumluluk</li>
+    </ul>
+</section>
+<!-- FOOTER (index ile aynı) -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-column">
+            <img src="images/icons/logo1_transparan.png" class="footer-logo">
+            <p class="footer-desc">Sustainable Development Society • İstanbul Medipol Üniversitesi</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Hızlı Erişim</h4>
+            <ul class="footer-links">
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="projeler.html">Projeler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Bizi Takip Edin</h4>
+            <div class="footer-social">
+                <a href="#"><img src="images/icons/instagram.png"></a>
+                <a href="#"><img src="images/icons/youtube.png"></a>
+                <a href="#"><img src="images/icons/spotify.png"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Sustainable Development Society • Tüm Hakları Saklıdır
+    </div>
+</footer>
+
+<script>
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        link.parentElement.classList.toggle("open");
+    });
+});
+</script>
+
+</body>
+</html>

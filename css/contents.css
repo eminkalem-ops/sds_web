@@ -1,0 +1,94 @@
+/* ======== HERO ALANI ======== */
+.content-hero {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.content-hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+}
+
+.content-hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+}
+
+/*======== GRID ========*/
+.content-section {
+    padding: 20px 0 60px;
+    background: #fafafa;
+}
+
+.content-grid {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* ======== CARD ======== */
+.content-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #e1e1e1;
+    text-align: center;
+    transition: 0.30s;
+}
+
+.content-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.content-card .icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.content-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.content-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ======== BUTTON ======== */
+.btn {
+    display: inline-block;
+    background: #1565c0;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0d47a1;
+}
+
+/* ======== MOBİL UYUM ======== */
+@media (max-width: 1000px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
