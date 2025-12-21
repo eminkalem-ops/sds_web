@@ -24,61 +24,7 @@
     </div>
 </header>
 
- <!--SIDEBAR SISTEMI-->
-<div class="sidebar-wrapper">
-
-    <!-- Gizli checkbox -->
-    <input type="checkbox" id="menu-toggle">
-
-    <!-- Sidebar -->
-    <nav class="sidebar">
-        <ul class="sidebar-menu">
-
-            <li><a href="index.html">Ana Sayfa</a></li>
-
-            <!--Hakkımızda Alt Menü-->
-            <li class="has-submenu">
-                <a href="#">Hakkımızda</a>
-                <ul class="submenu">
-                    <li><a href="hakkimizda.html">Genel Bilgi</a></li>
-                    <li><a href="ekip.html">Yönetim Kurulu</a></li>
-                </ul>
-            </li>
-
-            <li><a href="etkinlikler.html">Etkinlikler</a></li>
-
-            <li><a href="projeler.html">Projeler</a></li>
-
-            <!--Haberler Alt Menü-->
-            <li class="has-submenu">
-                <a href="#">Haberler</a>
-                <ul class="submenu">
-                    <li><a href="haberler.html">Haberler</a></li>
-                    <li><a href="analizler.html">Analizler</a></li>
-                </ul>
-            </li>
-
-            <!--İçerikler Alt Menü-->
-            <li class="has-submenu">
-                <a href="#">İçerikler</a>
-                <ul class="submenu">
-                    <li><a href="icerikler.html">Genel Bakış</a></li>
-                    <li><a href="youtube.html">Youtube</a></li>
-                    <li><a href="spotify.html">Podcast / Spotify</a></li>
-                    <li><a href="yazilar.html">Yazılar</a></li>
-                    <li><a href="raporlar.html">Raporlar</a></li>
-                </ul>
-            </li>
-
-            <li><a href="iletisim.html">İletişim</a></li>
-
-        </ul>
-    </nav>
-
-    <!-- Overlay -->
-    <label for="menu-toggle" class="overlay"></label>
-
-</div>
+ 
 
 <!-- ========================= -->
 <!--     SAYFA ÜST BAŞLIK     -->
@@ -115,14 +61,53 @@
         <li>🌍 Küresel Sorumluluk</li>
     </ul>
 </section>
-<!-- FOOTER (index ile aynı) -->
-<footer class="site-footer">
-    <div class="footer-top">
-        <div class="footer-column">
-            <img src="images/icons/logo1_transparan.png" class="footer-logo">
-            <p class="footer-desc">Sustainable Development Society • İstanbul Medipol Üniversitesi</p>
+<!-- ========================= -->
+<!--       İLETİŞİM           -->
+<!-- ========================= -->
+<section class="contact-section">
+    <div class="contact-container">
+        
+        <!--Sol Bilgi Kartı-->
+        <div class="contact-info">
+            <h2>İletişim</h2>
+
+            <p><strong>Email:</strong> sdsmedipol@gmail.com</p>
+            <p><strong>Adres:</strong> İstanbul Medipol Üniversitesi, Kavacık Güney Kampüsü</p>
+            <p><strong>Sosyal Medya:</strong> @medipolsds</p>
         </div>
 
+        <!--Sağ Form-->
+        <div class="contact-form">
+            <h3>Bize Ulaşın</h3>
+
+            <form>
+                <input type="text" placeholder="Ad Soyad" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mesajınız" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= -->
+<!--          FOOTER           -->
+<!-- ========================= -->
+<a href="#" class="back-to-top">↑</a>
+<footer class="site-footer">
+
+    <div class="footer-top">
+        
+        <!--SOL BLOK-->
+        <div class="footer-column">
+            <img src="images/icons/logo1_transparan.png" alt="SDS Logo" class="footer-logo">
+            <p class="footer-desc">
+                Sustainable Development Society • İstanbul Medipol Üniversitesi
+            </p>
+        </div>
+
+        <!--Orta Blok - Hızlı Linkler-->
         <div class="footer-column">
             <h4>Hızlı Erişim</h4>
             <ul class="footer-links">
@@ -133,20 +118,132 @@
             </ul>
         </div>
 
+        <!--Sağ Blok - Sosyal Medya -->
         <div class="footer-column">
             <h4>Bizi Takip Edin</h4>
             <div class="footer-social">
-                <a href="#"><img src="images/icons/instagram.png"></a>
-                <a href="#"><img src="images/icons/youtube.png"></a>
-                <a href="#"><img src="images/icons/spotify.png"></a>
+                <a href="https://www.instagram.com/medipolsds?igsh=N2oxc2cxYW8xeXQx"><img src="images/icons/instagram.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/@49W"><img src="images/icons/youtube.png" alt="Youtube"></a>
+                <a href="https://open.spotify.com/show/3LNeHyuAmOJzBy1VFXvxTI"><img src="images/icons/spotify.png" alt="Spotify"></a>
             </div>
         </div>
+
     </div>
 
+    <!--ALT ÇİZGİ-->
     <div class="footer-bottom">
         © 2025 Sustainable Development Society • Tüm Hakları Saklıdır
+    <p class="mini-slogan">Sürdürülübilir Bir Gelecek İçin Gençlik Hareketi</p>
     </div>
+
 </footer>
+
+    <!--SIDEBAR SISTEMI-->
+<div class="sidebar-wrapper">
+
+    <!-- Hamburger -->
+
+    <!-- Gizli checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+   <!-- SIDEBAR SYSTEM -->
+<div class="sidebar-wrapper">
+
+    <!-- hidden checkbox -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+
+        <div class="sidebar-top">
+            <label for="menu-toggle" class="close-icon">
+                <img src="images/sdg-wheel.png" class="sdg-icon" alt="Close">
+            </label>
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li><a href="index.html">Ana Sayfa</a></li>
+
+            <li class="has-submenu">
+                <a href="#">Hakkımızda</a>
+                <ul class="submenu">
+                    <li><a href="hakkimizda.html">Genel Bilgi</a></li>
+                    <li><a href="ekip.html">Yönetim Kurulu</a></li>
+                </ul>
+            </li>
+
+            <li><a href="etkinlikler.html">Etkinlikler</a></li>
+
+            <li><a href="projeler.html">Projeler</a></li>
+
+            <li class="has-submenu">
+                <a href="#">Haberler</a>
+                <ul class="submenu">
+                    <li><a href="haberler.html">Haberler</a></li>
+                    <li><a href="analizler.html">Analizler</a></li>
+                </ul>
+            </li>
+
+            <li class="has-submenu">
+                <a href="#">İçerikler</a>
+                <ul class="submenu">
+                    <li><a href="içerikler.html">Genel Bakış</a></li>
+                    <li><a href="youtube.html">Youtube</a></li>
+                    <li><a href="spotify.html">Podcast / Spotify</a></li>
+                    <li><a href="yazilar.html">Yazılar</a></li>
+                    <li><a href="raporlar.html">Raporlar</a></li>
+                </ul>
+            </li>
+
+            <li><a href="iletisim.html">İletişim</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- overlay -->
+    <label for="menu-toggle" class="overlay"></label>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    });
+});
+</script>
+<script>
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        link.parentElement.classList.toggle("open");
+    });
+});
+</script>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const img = document.querySelector(".sdg-toggle img");
+
+toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+        img.style.transform = "rotate(-180deg)";
+    } else {
+        img.style.transform = "rotate(180deg)";
+        setTimeout(() => {
+            img.style.transform = "rotate(0deg)";
+        }, 300)
+    }
+});
+</script>
+
 
 <script>
 document.querySelectorAll(".has-submenu > a").forEach(link => {
