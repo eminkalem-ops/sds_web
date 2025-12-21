@@ -11,21 +11,40 @@
 
 <body>
 
-    <!-- HEADER (Aynı yapıyı kullanıyoruz) -->
-<header class="main-header">
-    <div class="header-left">
-        <label for="menu-toggle" class="menu-icon">☰</label>
-        <img src="images/logo.png" class="logo">
-    </div>
+    <!--HEADER-->
+    <header class="main-header">
+        <!--Sol kısım: SDG Wheel + Logo-->
+        <div class="header-left">
+            <!--SDG Wheel sidebar trigger-->
+            <label for="menu-toggle" class="sdg-toggle">
+                <img src="images/sdg-wheel.png" alt="SDG Wheel">
+            </label>
+        <a href="index.html">
+            <img src="images/logo1_transparan.png" alt="SDS Logo" class="logo">
+        </a>
+        </div>
 
-    <div class="header-center">SDS - Sustainable Development Society</div>
+        <!--Orta kısım: Kulüp Adı-->
+    <a href="index.html" class="header-title-link">
+        <div class="header-center animated-title">
+            SDS - Sustainable Development Society
+        </div>
 
-    <div class="header-right">
-        <a href="https://forms.gle/xVUtAwHRHBxZeBTU9" class="join-btn" target="_blank">Üye Ol</a>
-        <a class="lang-active">TR</a>
-        <a href="team.html">EN</a>
-    </div>
-</header>
+        <!--Sağ kısım: Dil switch-->
+       <div class="header-right">
+
+    <!-- Üye Ol Butonu -->
+    <a href="https://forms.gle/xVUtAwHRHBxZeBTU9"
+       class="join-btn"
+       target="_blank">Üye Ol</a>
+   <div class="lang-switch">
+    <a href="#" class="lang-active tr">TR</a>
+    <a href="#" class="en">EN</a>
+   </div>
+    
+</div>
+
+    </header>
 
 <input type="checkbox" id="menu-toggle">
 

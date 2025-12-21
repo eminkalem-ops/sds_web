@@ -10,16 +10,22 @@
 </head>
 <body>
 
-    <!--HEADER-->
+   <!--HEADER-->
     <header class="main-header">
-        <!--Sol kısım: Hamburger + Logo-->
+        <!--Sol kısım: SDG Wheel + Logo-->
         <div class="header-left">
-            <label for="menu-toggle" class="menu-icon">☰</label>
-            <img src="images/logo.png" alt="SDS Logo" class="logo">
+            <!--SDG Wheel sidebar trigger-->
+            <label for="menu-toggle" class="sdg-toggle">
+                <img src="images/sdg-wheel.png" alt="SDG Wheel">
+            </label>
+        <a href="index.html">
+            <img src="images/logo1_transparan.png" alt="SDS Logo" class="logo">
+        </a>
         </div>
 
         <!--Orta kısım: Kulüp Adı-->
-        <div class="header-center">
+    <a href="index.html" class="header-title-link">
+        <div class="header-center animated-title">
             SDS - Sustainable Development Society
         </div>
 
@@ -30,13 +36,14 @@
     <a href="https://forms.gle/xVUtAwHRHBxZeBTU9"
        class="join-btn"
        target="_blank">Üye Ol</a>
-
-    <a href="#" class="lang-active">TR</a>
-    <a href="#">EN</a>
+   <div class="lang-switch">
+    <a href="#" class="lang-active tr">TR</a>
+    <a href="#" class="en">EN</a>
+   </div>
+    
 </div>
 
-    </header>
-    
+    </header>    
 
 <!-- ===================== -->
 <!--   HABER DETAY        -->

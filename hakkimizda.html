@@ -9,22 +9,40 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--HEADER (index ile aynı)-->
+ <!--HEADER-->
     <header class="main-header">
-        <label for="menu-toggle" class="menu-icon">☰</label>
-        <img src="images/logo.png" class="logo">
-    <div class="header-center">
-        SDS - Sustainable Development Society
-    </div>
+        <!--Sol kısım: SDG Wheel + Logo-->
+        <div class="header-left">
+            <!--SDG Wheel sidebar trigger-->
+            <label for="menu-toggle" class="sdg-toggle">
+                <img src="images/sdg-wheel.png" alt="SDG Wheel">
+            </label>
+        <a href="index.html">
+            <img src="images/logo1_transparan.png" alt="SDS Logo" class="logo">
+        </a>
+        </div>
 
-    <div class="header-right">
-        <a href="#" class="join-btn" target="_blank">Üye Ol</a>
-        <a href="#" class="lang-active">TR</a>
-        <a href="about.html">EN</a>
-    </div>
-</header>
+        <!--Orta kısım: Kulüp Adı-->
+    <a href="index.html" class="header-title-link">
+        <div class="header-center animated-title">
+            SDS - Sustainable Development Society
+        </div>
 
- 
+        <!--Sağ kısım: Dil switch-->
+       <div class="header-right">
+
+    <!-- Üye Ol Butonu -->
+    <a href="https://forms.gle/xVUtAwHRHBxZeBTU9"
+       class="join-btn"
+       target="_blank">Üye Ol</a>
+   <div class="lang-switch">
+    <a href="#" class="lang-active tr">TR</a>
+    <a href="#" class="en">EN</a>
+   </div>
+    
+</div>
+
+    </header>
 
 <!-- ========================= -->
 <!--     SAYFA ÜST BAŞLIK     -->
