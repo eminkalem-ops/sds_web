@@ -361,8 +361,10 @@ sidebar-wrapper #menu-toggle {
 
 .event-card img {
     width: 100%;
-    height: 180px;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
+    display: block;
+
 }
 
 .event-card h3 {
@@ -398,67 +400,141 @@ sidebar-wrapper #menu-toggle {
     }
 }
 
-/* ========================= */
-/*        PROJELER           */
-/* ========================= */
-.project-section {
-    padding: 60px 0;
-    background-color: #ffffff;
-    text-align: center;
-}
+/* ===== ZIGZAG PROJE KARTI ===== */
 
-.project-section h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
-    font-weight: 700;
-    color: #222;
-}
-
-.project-container {
+.projects-container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    margin: 0 auto 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-.project-card {
-
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid #e0e0e0;
-    transition: 0.3s;
+.project-card-zigzag {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* Zikzak */
+.project-row.reverse .project-card-zigzag {
+    flex-direction: row-reverse;
 }
 
-.project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+/* Logo alanı */
+.project-image {
+    flex: 0 0 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.project-card h3 {
-    font-size: 20px;
-    margin: 15px 0 10px;
+.project-image img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
 }
 
-.project-card p {
-    padding: 0 15px 15px;
+/* Metin alanı */
+.project-text h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.project-text p {
     font-size: 16px;
-    color: #555;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 18px;
 }
 
-.project-btn {
-    display: inline-block;
-    margin-bottom: 20px;
-    background: #1565c0; /* SDS mavi tonu */
+/* Mobil */
+@media (max-width: 900px) {
+    .project-card-zigzag {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-row.reverse .project-card-zigzag {
+        flex-direction: column;
+    }
+
+    .project-image img {
+        width: 180px;
+        height: 180px;
+    }
+}
+/* ===== PROJE DETAY ===== */
+
+.project-detail-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Logo kutusu */
+.project-logo-box {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px;
+}
+
+.project-logo-box img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+}
+
+/* Kart yapısı */
+.project-detail-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.project-detail-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.project-detail-card p,
+.project-detail-card li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Liste */
+.project-detail-card ul {
+    padding-left: 20px;
+}
+
+/* Galeri */
+.project-gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-gallery img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Geri butonu */
+.back-btn {
+    align-self: flex-start;
+    background: #1565c0;
     color: white;
     padding: 10px 22px;
     border-radius: 6px;
@@ -466,16 +542,22 @@ sidebar-wrapper #menu-toggle {
     transition: 0.3s;
 }
 
-.project-btn:hover {
+.back-btn:hover {
     background: #0d47a1;
 }
 
-/* Mobil Uyum */
-@media(max-width: 900px) {
-    .project-container {
-        grid-template-columns: 1fr;
+/* Mobil */
+@media (max-width: 768px) {
+    .project-logo-box img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .project-gallery {
+        justify-content: center;
     }
 }
+
 
 /* ========================= */
 /*        İÇERİKLER          */
@@ -1041,12 +1123,21 @@ sidebar-wrapper #menu-toggle {
     margin-bottom: 12px;
     color: #0b3d91; /* SDS Mavi Tonu */
 }
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-@media(max-width: 900px) {
-    .team-container {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+    .team-photo {
+        height: 200px;
     }
 }
+
 
 /* ---- ETKİNLİK SAYFASI ---- */
 .event-page-header {
@@ -2155,4 +2246,41 @@ sidebar-wrapper #menu-toggle {
     .advisor-sign {
         text-align: center;
     }
+}
+
+/* Hakkımızda: 3 kutulu yapı */
+.about-boxes{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Kutular */
+.about-boxes .info-box{
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Başlıklar */
+.about-boxes .info-box h2{
+  margin: 0 0 12px 0;
+  font-size: 28px;
+}
+
+/* Liste düzeni */
+.about-boxes .values-list{
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.9;
+}
+
+/* Mobilde alt alta gelsin */
+@media (max-width: 900px){
+  .about-boxes{
+    grid-template-columns: 1fr;
+  }
 }
