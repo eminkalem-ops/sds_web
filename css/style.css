@@ -2284,3 +2284,65 @@ sidebar-wrapper #menu-toggle {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================= */
+/*   ANA SAYFA PROJE KARTI   */
+/* ========================= */
+
+.project-container-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card-main {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 2px solid #e5e5e5;
+    transition: 0.3s;
+}
+
+.project-card-main:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-card-main img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.project-card-main h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card-main p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-btn-main {
+    display: inline-block;
+    background: #1565c0;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project-btn-main:hover {
+    background: #0d47a1;
+}
+.project-section h2 {
+    text-align: center;
+}
