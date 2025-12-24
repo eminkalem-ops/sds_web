@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sustainable Development Society - İstanbul Medipol Üniversitesi öğrenci topluluğu">
+    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+    <title>SDS - Sustainable Development Society</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2C5F2D;
+            --secondary: #97BC62;
+            --accent: #00A86B;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2C5F2D 0%, #00A86B 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled {
+            padding: 0.5rem 2rem;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.15);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .sdg-toggle {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .sdg-toggle:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .sdg-toggle img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.5s ease;
+        }
+
+        .logo {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled .logo {
+            height: 45px;
+        }
+
+        .header-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .join-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44, 95, 45, 0.3);
+        }
+
+        .join-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(44, 95, 45, 0.4);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switch a {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--dark);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch a.lang-active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 90px;
+            min-height: 90vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(50px, 50px) rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero-btn {
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .hero-btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* CARDS GRID */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .card-btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .card-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(44, 95, 45, 0.3);
+        }
+
+        /* STATS SECTION */
+        .stats-section {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-column h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social img {
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-social img:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* SIDEBAR */
+        #menu-toggle {
+            display: none;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            box-shadow: 5px 0 30px rgba(0,0,0,0.2);
+            transition: left 0.4s ease;
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        #menu-toggle:checked ~ .sidebar {
+            left: 0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1999;
+        }
+
+        #menu-toggle:checked ~ .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar-top {
+            padding: 2rem;
+            background: var(--gradient);
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .close-icon {
+            cursor: pointer;
+        }
+
+        .sdg-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .close-icon:hover .sdg-icon {
+            transform: rotate(90deg);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .sidebar-menu > li > a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-menu > li > a:hover {
+            background: var(--light);
+            border-left-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .submenu {
+            list-style: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--light);
+        }
+
+        .has-submenu.open .submenu {
+            max-height: 500px;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 0.8rem 3rem;
+            color: #666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .submenu a:hover {
+            color: var(--primary);
+            background: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .header-center {
+                position: static;
+                transform: none;
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-header {
+                padding: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="header-left">
+        <label for="menu-toggle" class="sdg-toggle">
+            <img src="images/sdg-wheel.png" alt="SDG Wheel">
+        </label>
+        <a href="index.html">
+            <img src="images/logo1_transparan.png" alt="SDS Logo" class="logo">
+        </a>
+    </div>
+
+    <div class="header-center">
+        SDS - Sustainable Development Society
+    </div>
+
+    <div class="header-right">
+        <a href="https://forms.gle/xVUtAwHRHBxZeBTU9" class="join-btn" target="_blank">Üye Ol</a>
+        <div class="lang-switch">
+            <a href="#" class="lang-active tr">TR</a>
+            <a href="#" class="en">EN</a>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Sürdürülebilir Bir Gelecek İçin</h1>
+        <p>Gençlik Hareketi • İstanbul Medipol Üniversitesi</p>
+        <div class="hero-buttons">
+            <a href="#projeler" class="hero-btn hero-btn-primary">Projelerimiz</a>
+            <a href="hakkimizda.html" class="hero-btn hero-btn-secondary">Hakkımızda</a>
+        </div>
+    </div>
+</section>
+
+<!-- ETKİNLİKLER -->
+<section class="section">
+    <div class="section-header">
+        <h2>Son Etkinlikler</h2>
+        <p>SDS'in katıldığı konferanslar, eğitimler ve saha etkinlikleri</p>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+            <img src="images/etkinlik/etkinlik1.jpg" class="card-image" alt="Etkinlik">
+            <div class="card-content">
+                <div class="card-date">📅 23 Eylül 2025</div>
+                <h3>GSTM Fakültesi Oryantasyon</h3>
+                <p>SDS ve SURKAM tanıtım sunumu gerçekleştirildi.</p>
+                <a href="etkinlikler.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/etkinlik/etkinlik2.1.jpg" class="card-image" alt="Etkinlik">
+            <div class="card-content">
+                <div class="card-date">📅 24 Eylül 2025</div>
+                <h3>Yeşil İş Platformu Konferansı</h3>
+                <p>Fairmont Quasar'da düzenlenen konferansa SDS ekibi katıldı.</p>
+                <a href="etkinlikler.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/etkinlik/etkinlik8.1.jpg" class="card-image" alt="Etkinlik">
+            <div class="card-content">
+                <div class="card-date">📅 24 Ekim 2025</div>
+                <h3>Sürdürülebilirlik Haftası</h3>
+                <p>AİK ile ortak sürdürülebilirlik eğitim haftası programı.</p>
+                <a href="etkinlikler.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- İSTATİSTİKLER -->
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Aktif Üye</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Etkinlik</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Aktif Proje</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Kişiye Ulaşım</div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJELER -->
+<section class="section" id="projeler">
+    <div class="section-header">
+        <h2>Projelerimiz</h2>
+        <p>Sürdürülebilirlik alanında yürüttüğümüz projeler</p>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+            <img src="images/logo.png" class="card-image" alt="Proje">
+            <div class="card-content">
+                <h3>Dayanıklılık Köprüsü</h3>
+                <p>Deprem bölgesindeki gençler için akran eğitimi temelli sosyal etki projesi.</p>
+                <a href="dayaniklilik-koprusu.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/logo.png" class="card-image" alt="Proje">
+            <div class="card-content">
+                <h3>SENATO</h3>
+                <p>Münazara, analitik düşünme ve modern iletişim tekniklerini bir araya getiren podcast.</p>
+                <a href="senato.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/logo.png" class="card-image" alt="Proje">
+            <div class="card-content">
+                <h3>Green League</h3>
+                <p>Üniversiteler arası sürdürülebilirlik temalı bilgi yarışması platformu.</p>
+                <a href="green-league.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HABERLER -->
+<section class="section" style="background: var(--light);">
+    <div class="section-header">
+        <h2>Güncel Haberler</h2>
+        <p>Sürdürülebilirlik alanındaki önemli gelişmeler</p>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+            <img src="images/news/news1.jpg" class="card-image" alt="Haber">
+            <div class="card-content">
+                <div class="card-date">📅 22 Kasım 2025</div>
+                <h3>Brezilya'da COP30 Zirvesi Başladı</h3>
+                <p>İklim değişikliği müzakerelerinde kritik başlıkların ele alındığı COP30 zirvesi başladı.</p>
+                <a href="haber1.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/news/news2.jpg" class="card-image" alt="Haber">
+            <div class="card-content">
+                <div class="card-date">📅 18 Kasım 2025</div>
+                <h3>AB Yeşil Mutabakatında Yeni Gelişmeler</h3>
+                <p>Avrupa Komisyonu, sınırda karbon düzenlemesi için yeni geçiş takvimini paylaştı.</p>
+                <a href="haber2.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/news/news3.jpg" class="card-image" alt="Haber">
+            <div class="card-content">
+                <div class="card-date">📅 17 Kasım 2025</div>
+                <h3>Sürdürülebilirlik Sempozyumu</h3>
+                <p>İstanbul Medipol Üniversitesi SURKAM tarafından düzenlenen sempozyum gerçekleşti.</p>
+                <a href="haber3.html" class="card-btn">Detaylar →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-column">
+            <img src="images/icons/logo1_transparan.png" alt="SDS Logo" class="footer-logo">
+            <p>Sustainable Development Society • İstanbul Medipol Üniversitesi</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Hızlı Erişim</h4>
+            <ul class="footer-links">
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="etkinlikler.html">Etkinlikler</a></li>
+                <li><a href="projeler.html">Projeler</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>İletişim</h4>
+            <p>Email: sdsmedipol@gmail.com</p>
+            <p>Adres: İstanbul Medipol Üniversitesi<br>Kavacık Güney Kampüsü</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Bizi Takip Edin</h4>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/medipolsds"><img src="images/icons/instagram.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/@49W"><img src="images/icons/youtube.png" alt="Youtube"></a>
+                <a href="https://open.spotify.com/show/3LNeHyuAmOJzBy1VFXvxTI"><img src="images/icons/spotify.png" alt="Spotify"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Sustainable Development Society • Tüm Hakları Saklıdır</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Sürdürülebilir Bir Gelecek İçin Gençlik Hareketi</p>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top">↑</a>
+
+<!-- SIDEBAR -->
+<input type="checkbox" id="menu-toggle">
+<nav class="sidebar">
+    <div class="sidebar-top">
+        <label for="menu-toggle" class="close-icon">
+            <img src="images/sdg-wheel.png" class="sdg-icon" alt="Kapat">
+        </label>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        
+        <li class="has-submenu">
+            <a href="#">Hakkımızda</a>
+            <ul class="submenu">
+                <li><a href="hakkimizda.html">Genel Bilgi</a></li>
+                <li><a href="ekip.html">Yönetim Kurulu</a></li>
+            </ul>
+        </li>
+
+        <li><a href="etkinlikler.html">Etkinlikler</a></li>
+        <li><a href="projeler.html">Projeler</a></li>
+
+        <li class="has-submenu">
+            <a href="#">Haberler</a>
+            <ul class="submenu">
+                <li><a href="haberler.html">Haberler</a></li>
+                <li><a href="analizler.html">Analizler</a></li>
+            </ul>
+        </li>
+
+        <li class="has-submenu">
+            <a href="#">İçerikler</a>
+            <ul class="submenu">
+                <li><a href="içerikler.html">Genel Bakış</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+                <li><a href="spotify.html">Podcast</a></li>
+                <li><a href="yazilar.html">Yazılar</a></li>
+                <li><a href="raporlar.html">Raporlar</a></li>
+            </ul>
+        </li>
+
+        <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+</nav>
+<label for="menu-toggle" class="overlay"></label>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Header scroll effect
+    const header = document.querySelector('.main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Back to top button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Submenu toggle
+    document.querySelectorAll(".has-submenu > a").forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            link.parentElement.classList.toggle("open");
+        });
+    });
+
+    // SDG wheel rotation
+    const toggle = document.getElementById("menu-toggle");
+    const sdgImg = document.querySelector(".sdg-toggle img");
+
+    toggle.addEventListener("change", () => {
+        if (toggle.checked) {
+            sdgImg.style.transform = "rotate(-180deg)";
+        } else {
+            sdgImg.style.transform = "rotate(0deg)";
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all cards
+    document.querySelectorAll('.card, .stat-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+});
+</script>
+
+</body>
+</html>
